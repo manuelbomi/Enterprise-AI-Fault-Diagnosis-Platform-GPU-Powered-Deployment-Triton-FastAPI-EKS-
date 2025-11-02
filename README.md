@@ -1,7 +1,2 @@
-# Enterprise GPU Inference & Deployment
-
-**Project Title:** Enterprise GPU Inference Platform — EKS (GPU) + Helm + FastAPI + Triton
-
-This repository provides deployment artifacts, microservice code, and Helm charts to run a GPU-accelerated inference pipeline on Kubernetes (EKS). It integrates FastAPI, NVIDIA Triton Inference Server, FAISS-based similarity search, and Helm-based deployment for GPU nodes.
-
-See docs and comments in files for usage.
+# Enterprise AI Fault Diagnosis Platform — GPU-Powered Deployment (Triton + FastAPI + EKS)
+> Production-grade enterprise system for automated fault detection, image similarity search, and engineering knowledge retrieval — deployed on NVIDIA GPU infrastructure & Kubernetes (EKS).
