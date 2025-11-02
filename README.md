@@ -141,4 +141,34 @@ Customer Fault Images → Triton (GPU) → FastAPI → Similarity Engine (FAISS)
                         Engineering RAG + PDF RCA
 ```
 
+---
+
+
+## Enterprise Use Cases
+
+| Department | Benefit |
+|------------|---------|
+| Field Engineering | Faster fault triage |
+| Quality Engineering | RCA acceleration |
+| Manufacturing | Systemic defect detection |
+| Customer Support | Visual case lookup & automation |
+| R&D | Feedback loop for new designs |
+
+---
+
+## Maintainer Notes
+
+#### This repo is part of a multi-repo enterprise AI program including:
+
+- Model training pipeline (TensorFlow/PyTorch GPU)
+
+- FAISS vector indexing pipeline
+
+- RAG for engineering PDFs + fault reports
+
+- Triton GPU serving
+
+- EKS Helm deployment
+
+
 
