@@ -28,29 +28,32 @@
 > Kubernetes (e.g., EKS, GKE, AKS)
 > Edge devices
 
-What Triton Does
+#### <ins>What Triton Does</ins>:
 
-Triton allows you to:
+#### Triton allows you to:
 
-Serve multiple models (PyTorch, TensorFlow, ONNX, XGBoost, ensemble pipelines)
+- Serve multiple models (PyTorch, TensorFlow, ONNX, XGBoost, ensemble pipelines)
 
-Use optimized execution (TensorRT, CUDA, RAPIDS)
+- Use optimized execution (TensorRT, CUDA, RAPIDS)
 
-Scale model serving with GPU batching
+- Scale model serving with GPU batching
 
-Run inference in production (MLOps, Kubernetes)
+- Run inference in production (MLOps, Kubernetes)
 
-Support multi-model / multi-framework workloads
+- Support multi-model / multi-framework workloads
 
-✅ Example Use Cases
 
-High-volume LLM/RAG inference
+#### <ins>Example Use Cases of Triton</ins>
 
-Vision models for defect detection (manufacturing/forensics)
+- High-volume LLM/RAG inference
 
-Enterprise MLOps backbone for AI microservices
+- Vision models for defect detection (manufacturing/forensics)
 
-Edge + cloud inference pipelines
+- Enterprise MLOps backbone for AI microservices
+
+- Edge + cloud inference pipelines
+- 
+---
 
 
 #### This repo represents the deployment-ready component of the larger Enterprise Fault-Diagnosis AI program.
