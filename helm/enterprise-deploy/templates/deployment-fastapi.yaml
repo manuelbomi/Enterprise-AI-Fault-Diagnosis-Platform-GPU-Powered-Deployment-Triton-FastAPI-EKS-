@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "enterprise-deploy.fullname" . }}-fastapi
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "enterprise-deploy.fullname" . }}-fastapi
+  template:
+    metadata:
+      labels:
+        app: {{ include "enterprise-deploy.fullname" . }}-fastapi
+    spec:
+      containers:
+        - name: fastapi
+          image: "{{ .Values.fastapi.image }}"
+          ports:
+            - containerPort: {{ .Values.fastapi.servicePort }}
+          resources:
+            limits:
+              nvidia.com/gpu: {{ .Values.fastapi.resources.limits.nvidia.com/gpu }}
+            requests:
+              cpu: {{ .Values.fastapi.resources.requests.cpu }}
+              memory: {{ .Values.fastapi.resources.requests.memory }}

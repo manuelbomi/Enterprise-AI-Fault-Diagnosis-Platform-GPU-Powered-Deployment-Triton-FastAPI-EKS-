@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "enterprise-deploy.fullname" . }}-triton
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ include "enterprise-deploy.fullname" . }}-triton
+  template:
+    metadata:
+      labels:
+        app: {{ include "enterprise-deploy.fullname" . }}-triton
+    spec:
+      containers:
+        - name: triton
+          image: "{{ .Values.triton.image }}"
+          args: ["tritonserver", "--model-repository={{ .Values.triton.modelRepoPath }}"]
+          ports:
+            - containerPort: 8001
+            - containerPort: 8000
+            - containerPort: 8002
+          volumeMounts:
+            - name: model-repo
+              mountPath: {{ .Values.triton.modelRepoPath }}
+          resources:
+            limits:
+              nvidia.com/gpu: {{ .Values.triton.resources.limits.nvidia.com/gpu }}
+            requests:
+              cpu: {{ .Values.triton.resources.requests.cpu }}
+              memory: {{ .Values.triton.resources.requests.memory }}
+      volumes:
+        - name: model-repo
+          hostPath:
+            path: /models
+            type: DirectoryOrCreate

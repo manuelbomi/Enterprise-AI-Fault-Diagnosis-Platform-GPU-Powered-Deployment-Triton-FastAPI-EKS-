@@ -1,0 +1,28 @@
+name: "vgg16"
+platform: "onnxruntime_onnx"
+max_batch_size: 8
+input [
+  {
+    name: "input__0"
+    data_type: TYPE_FP32
+    dims: [ 224, 224, 3 ]
+  }
+]
+output [
+  {
+    name: "embedding"
+    data_type: TYPE_FP32
+    dims: [ 4096 ]
+  },
+  {
+    name: "probs"
+    data_type: TYPE_FP32
+    dims: [ 1000 ]
+  }
+]
+instance_group [
+  {
+    kind: KIND_GPU
+    count: 1
+  }
+]
