@@ -4,7 +4,7 @@
 
 #### This repository delivers a real-world industrial AI platform capable of:
 
-- Vision-based fault classification (CNN backbone — future ViT upgrade)
+- Vision-based fault classification (CNN backbone — future ViT (vision transformers) upgrade)
 
 - FAISS-based vector similarity search for historical defect images
 
