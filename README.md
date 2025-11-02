@@ -18,6 +18,21 @@
 
 - CI/CD automation (GitHub Actions)
 
+> [!NOTE]
+> NVIDIA Triton refers to NVIDIA Triton Inference Server, a software platform used to deploy and serve AI/ML models efficiently on:
+
+> NVIDIA GPUs
+
+> CPUs
+
+> Cloud environments (AWS, GCP, Azure)
+
+> Kubernetes (e.g., EKS, GKE, AKS)
+
+> Edge devices
+>
+
+
 #### This repo represents the deployment-ready component of the larger Enterprise Fault-Diagnosis AI program.
 
 ## Repository Structure
