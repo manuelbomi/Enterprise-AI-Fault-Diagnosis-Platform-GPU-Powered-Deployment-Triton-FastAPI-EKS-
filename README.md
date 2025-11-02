@@ -83,4 +83,62 @@ enterprise-image-fault-diagnosis-deploy/
 
 - Kubernetes GPU autoscaling support
 
+---
+
+## Deployment — AWS EKS + NVIDIA GPUs
+
+<ins>Prerequisites</ins>
+
+- AWS EKS cluster
+
+- GPU worker nodes (A10G / A100 / V100)
+
+- NVIDIA device plugin installed
+
+- Helm installed
+
+#### Deploy with Helm
+
+```python
+kubectl create namespace fault-ai
+helm install fault-ai ./helm/enterprise-deploy -n fault-ai
+```
+
+#### Microservice — FastAPI (gRPC to Triton)
+
+##### Local Run
+
+```python
+cd src/fastapi_service
+docker build -f Dockerfile.fastapi -t fault-ai-api .
+docker run --gpus all -p 8080:8080 fault-ai-api
+```
+
+---
+
+#### CI/CD Pipeline
+
+##### GitHub Actions file:
+
+```python
+.github/workflows/ci.yml
+```
+
+<ins>Includes</ins>:
+
+- Build & scan containers
+-  Push to registry
+-  Lint Kubernetes manifests
+-  Helm dry-run & validation
+
+## Architecture Diagram
+
+### Vision Model + Vector Search + GPU Inference + EKS MLOps
+
+```python
+Customer Fault Images → Triton (GPU) → FastAPI → Similarity Engine (FAISS)
+                                    ↓
+                        Engineering RAG + PDF RCA
+```
+
 
